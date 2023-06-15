@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Jumping
   - Ground
+  - Enemy
+  - _isGround
   layers:
   - Default
   - TransparentFX
