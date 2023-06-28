@@ -18,8 +18,8 @@ public class MonsterMove : MonoBehaviour
         {
             Follow();
         }
-        
-     
+
+
     }
     public void Follow()
     {
@@ -29,6 +29,7 @@ public class MonsterMove : MonoBehaviour
         Vector3 move2 = move.normalized;
         Vector3 move3 = move2 * _speed;
         _monster.position = _monster.position - move3 * Time.deltaTime;
-
+        
     }
+   
 }

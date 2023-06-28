@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
     Transform _monster;
 
     float _jumpConut;
-    bool _isGround = false;
+    bool _isjump;
 
 
     void Update()
@@ -38,24 +38,20 @@ public class PlayerMove : MonoBehaviour
         //  _rigPlayer.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
 
         // }
-        if (Input.GetKeyDown(KeyCode.Space) == true && (_jumpConut < 2 || _isGround == true))
-        {
-            _jumpConut++;
+        if (Input.GetKeyDown(KeyCode.Space) && !_isjump)
+        {          
             _rigPlayer.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-            _isGround = false;
+            _isjump = true;
 
         }
 
     }
      void OnCollisionExit2D(Collision2D collision) //Exit,엔터,스테이
-    {       
+    {
         //if(collision.collider.name == "Ground")
-        if (collision.collider.CompareTag("Jumping"))
+        if (collision.gameObject.tag == "Ground")
         {
-            _isGround = true;
-            _jumpConut = 0;
+            _isjump = false;
         }
-
-
     }
 }
