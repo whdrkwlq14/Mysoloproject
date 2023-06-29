@@ -7,9 +7,9 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] Rigidbody2D _rigPlayer;
     [SerializeField] float _speed;
    
-    Transform _monster;
+   
 
-    float _jumpConut;
+    
     bool _isjump;
 
 

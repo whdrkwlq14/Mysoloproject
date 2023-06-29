@@ -17,17 +17,8 @@ public class EnemyMove : MonoBehaviour
     void FixedUpdate()
     {
         rigid.velocity = new Vector2(nextMove, rigid.velocity.y);
-        //ÇÃ·§ÆûÃ¼Å© 
-        Vector2 frontVec = new Vector2(rigid.position.x, rigid.position.y);
-        Debug.DrawRay(rigid.position, Vector3.down, new Color(0, 1, 0));
-        //RaycastHit2D rayHit = physics2D.Raycast(rigid.position, Vector3.down, 1, LayerMask.GetMask("Platform"));
-       // if(rayHit.collider != null)
-        //{
-        //    if (rayHit.distance < 0.5f)
-        //    {
-                
-       //     }
-       // }
+        //
+        Vector2 Vec2 = new Vector2(rigid.position.x, rigid.position.y);
     }
     void Think()
     {

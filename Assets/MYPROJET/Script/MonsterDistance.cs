@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterMove : MonoBehaviour
+public class MonsterDistance : MonoBehaviour
 {
     [SerializeField] Transform _monster;
     [SerializeField] Rigidbody2D _rigPlayer;
@@ -14,7 +14,7 @@ public class MonsterMove : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(_rigPlayer.position, _monster.position) < 5f)
+        if (Vector3.Distance(_rigPlayer.position, _monster.position) < 3.5f)
         {
             Follow();
         }
