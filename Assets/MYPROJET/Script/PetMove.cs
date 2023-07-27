@@ -11,7 +11,7 @@ public class PetMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(_hero.position, _petmove.position) > 2.5f)
+        if (Vector3.Distance(_hero.position, _petmove.position) > 10f)
         {
             Follow();
         }

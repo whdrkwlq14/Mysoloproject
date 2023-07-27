@@ -6,31 +6,35 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] Rigidbody2D _rigPlayer;
     [SerializeField] float _speed;
-   
-   
+    [SerializeField] Transform _light;
 
-    
+
+
+    SpriteRenderer _renderer;
     bool _isjump;
 
+    private void Start()
+    {
+        _renderer= GetComponent<SpriteRenderer>();
+    }
 
     void Update()
     {
+        float x = Input.GetAxis("Horizontal") * _speed;
         if (Input.GetKey(KeyCode.D))
         {
-            float x = Input.GetAxis("Horizontal") * _speed;
             // float y = Input.GetAxis("Vertical") * _speed; 물속체험
             _rigPlayer.velocity = new Vector2(x, _rigPlayer.velocity.y);
 
         }
         if (Input.GetKey(KeyCode.A))
         {
-            float x = Input.GetAxis("Horizontal") * _speed;
             // float y = Input.GetAxis("Vertical") * _speed; 물속체험
             _rigPlayer.velocity = new Vector2(x, _rigPlayer.velocity.y);
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            float x = Input.GetAxis("Horizontal") * _speed * 2;
+            x *= 2;
             _rigPlayer.velocity = new Vector2(x, _rigPlayer.velocity.y);
         }
         // if (Input.GetKeyDown(KeyCode.Space))
@@ -38,6 +42,17 @@ public class PlayerMove : MonoBehaviour
         //  _rigPlayer.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
 
         // }
+
+        if(x > 0)
+        {
+            _renderer.flipX = false;
+            _light.rotation = Quaternion.Euler(0,0,-90);
+        }
+        else if(x < 0)
+        {
+            _renderer.flipX = true;
+            _light.rotation = Quaternion.Euler(0,0,90);
+        }
         if (Input.GetKeyDown(KeyCode.Space) && !_isjump)
         {          
             _rigPlayer.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
