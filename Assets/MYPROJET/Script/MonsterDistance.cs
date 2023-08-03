@@ -14,7 +14,7 @@ public class MonsterDistance : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(_rigPlayer.position, _monster.position) < 3.5f)
+        if (Vector3.Distance(_rigPlayer.position, _monster.position) < 4f)
         {
             Follow();
         }

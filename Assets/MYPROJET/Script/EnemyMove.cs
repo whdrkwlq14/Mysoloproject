@@ -7,7 +7,6 @@ public class EnemyMove : MonoBehaviour
     Rigidbody2D rigid;
     public int nextMove;
 
-    // Update is called once per frame
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();

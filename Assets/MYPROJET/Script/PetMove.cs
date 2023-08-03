@@ -7,17 +7,14 @@ public class PetMove : MonoBehaviour
     [SerializeField] Transform _petmove;
     [SerializeField] float _petspeed;
     [SerializeField] Rigidbody2D _hero;
-
-    // Update is called once per frame
+    
     void Update()
     {
-        if (Vector3.Distance(_hero.position, _petmove.position) > 10f)
+        if (Vector3.Distance(_hero.position, _petmove.position) > 2f)
         {
             Follow();
         }
-      
     }
-
     public void Follow()
     {
         Vector3 movePet = _petmove.position;
@@ -25,7 +22,6 @@ public class PetMove : MonoBehaviour
         Vector3 move = movePet - movePlayer;
         Vector3 move2 = move.normalized;
         Vector3 move3 = move2 * _petspeed;
-        _petmove.position = _petmove.position - move3 * Time.deltaTime;
-       
+        _petmove.position = (_petmove.position - move3 * Time.deltaTime);
     }
 }
