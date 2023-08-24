@@ -21,27 +21,24 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         float x = Input.GetAxis("Horizontal") * _speed;
+
         if (Input.GetKey(KeyCode.D))
         {
-            // float y = Input.GetAxis("Vertical") * _speed; 물속체험
+           
             _rigPlayer.velocity = new Vector2(x, _rigPlayer.velocity.y);
 
         }
         if (Input.GetKey(KeyCode.A))
         {
-            // float y = Input.GetAxis("Vertical") * _speed; 물속체험
+            
             _rigPlayer.velocity = new Vector2(x, _rigPlayer.velocity.y);
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            x *= 2;
+            x *= 3;
             _rigPlayer.velocity = new Vector2(x, _rigPlayer.velocity.y);
         }
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //  _rigPlayer.AddForce(Vector2.up * 10, ForceMode2D.Impulse);
 
-        // }
 
         if(x > 0)
         {

@@ -14,12 +14,15 @@ public class MonsterDistance : MonoBehaviour
 
     void Update()
     {
-        if (Vector3.Distance(_rigPlayer.position, _monster.position) < 4f)
+        if (Vector3.Distance(_rigPlayer.position, _monster.position) < 4.5f)
         {
             Follow();
+            GameObject.Destroy(_rigPlayer.gameObject);
         }
-
-
+        else if (Vector3.Distance(_rigPlayer.position, _monster.position) > 4.5f)
+        {
+           
+        }
     }
     public void Follow()
     {
@@ -30,6 +33,10 @@ public class MonsterDistance : MonoBehaviour
         Vector3 move3 = move2 * _speed;
         _monster.position = _monster.position - move3 * Time.deltaTime;
         
+    }
+    public void RollBack()
+    {
+       Destroy(gameObject);
     }
    
 }

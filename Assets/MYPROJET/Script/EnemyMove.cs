@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
+    [SerializeField] Rigidbody2D _rigidbody;
     Rigidbody2D rigid;
+
     public int nextMove;
+
+
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
 
-        Invoke("Think", 1f);
+
+        Invoke("Think", 0.5f);
     }
     void FixedUpdate()
     {
@@ -22,7 +27,7 @@ public class EnemyMove : MonoBehaviour
     void Think()
     {
         nextMove = Random.Range(-3,3);
-        Invoke("Think", 1f);
+        Invoke("Think", 0.5f);
 
     }
 }
