@@ -4,9 +4,7 @@ using UnityEngine;
 
 namespace Cainos.PixelArtPlatformer_VillageProps
 {
-    //moving platform
-    //used on a moving platform so that objects fallen on this platform will perfectly follow to it
-    //otherwise due to physical simulation precision problem object will not follow the moving platform as expected
+
 
     public class MovingPlatform : MonoBehaviour
     {

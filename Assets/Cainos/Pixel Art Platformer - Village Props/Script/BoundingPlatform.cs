@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Cainos.Common;
+using System.Runtime.CompilerServices;
 
 namespace Cainos.PixelArtPlatformer_VillageProps
 {
@@ -30,6 +31,7 @@ namespace Cainos.PixelArtPlatformer_VillageProps
             foreach ( Rigidbody2D rb2d in onPlatformRigidbodies)
             {
                 rb2d.velocity += pushSpeed * Vector2.up;
+                
             }
             onPlatformRigidbodies.Clear();
         }
@@ -53,7 +55,7 @@ namespace Cainos.PixelArtPlatformer_VillageProps
             waitTimer += Time.fixedDeltaTime;
             if ( waitTimer > waitTime )
             {
-                //to up
+                //위로
                 if (curState == State.Down)
                 {
                     waitTimer = 0.0f;
@@ -62,7 +64,7 @@ namespace Cainos.PixelArtPlatformer_VillageProps
 
                     Push();
                 }
-                //to down
+                //아래
                 else
                 {
                     if (platformYPos > platformYPosDown)
