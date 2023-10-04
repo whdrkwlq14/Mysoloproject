@@ -28,10 +28,10 @@ public class PlayerMovement : MonoBehaviour {
 			jump = true;
 		}
 
-		if (Input.GetKeyDown(KeyCode.X))
-		{
-			dash = true;
-		}
+		//if (Input.GetKeyDown(KeyCode.X))
+		//{
+		//	dash = true;
+		//}
 
 	}
 
@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate ()
 	{
 		// Move our character
-		controller.Move(horizontalMove * Time.fixedDeltaTime, jump, dash);
+		controller.Move(horizontalMove * Time.fixedDeltaTime, jump, dash); //dash
 		jump = false;
 		dash = false;
 	}
