@@ -36,7 +36,7 @@ public class MonsterDistance : MonoBehaviour
     }
     public void RollBack()
     {
-       Destroy(gameObject);
+      // Destroy(gameObject);
     }
    
 }
