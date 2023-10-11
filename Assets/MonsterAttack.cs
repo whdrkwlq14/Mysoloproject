@@ -6,15 +6,21 @@ public class MonsterAttack : MonoBehaviour
 {
     public GameObject rockPrefab; // 바위 프리팹
     public Transform throwPoint; // 바위가 소환될 위치
-    public float throwInterval = 3.0f; // 바위 소환 주기 (초)
+    public float throwInterval = 2.0f; // 바위 소환 주기 (초)
     public float rockSpeed = 1.0f; // 바위 속도
     public int rockDamage = 10; // 바위로 인한 피해
 
     private Transform player;
     private float nextThrowTime;
+    private HealthBar playerHealthBar;
 
     private void Start()
     {
+        playerHealthBar = GetComponent<HealthBar>();
+        if (playerHealthBar == null)
+        {
+            Debug.Log("박쥐 바위공격 스타트로그");
+        }
         // 플레이어를 찾아서 대상으로 설정
         player = GameObject.FindWithTag("Player").transform;
 
@@ -44,9 +50,9 @@ public class MonsterAttack : MonoBehaviour
         // 바위를 생성
         GameObject rock = Instantiate(rockPrefab, throwPoint.position, Quaternion.identity);
 
-        // 바위 방향 설정 (플레이어를 향하도록)
+        // 공격 방향 설정 (플레이어를 향하도록)
         Vector2 throwDirection = (player.position - throwPoint.position).normalized;
         rock.GetComponent<Rigidbody2D>().velocity = throwDirection * rockSpeed;
-
+        
     }
 }
