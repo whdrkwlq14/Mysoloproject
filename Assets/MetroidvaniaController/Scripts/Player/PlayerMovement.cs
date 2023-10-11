@@ -17,7 +17,8 @@ public class PlayerMovement : MonoBehaviour {
 	bool dash = false;
 
 	//bool dashAxis = false;	
-	void Update () {
+	void Update () 
+	{
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 

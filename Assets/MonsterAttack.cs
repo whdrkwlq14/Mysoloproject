@@ -7,7 +7,7 @@ public class MonsterAttack : MonoBehaviour
     public GameObject rockPrefab; // 바위 프리팹
     public Transform throwPoint; // 바위가 소환될 위치
     public float throwInterval = 3.0f; // 바위 소환 주기 (초)
-    public float rockSpeed = 5.0f; // 바위 속도
+    public float rockSpeed = 1.0f; // 바위 속도
     public int rockDamage = 10; // 바위로 인한 피해
 
     private Transform player;
