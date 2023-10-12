@@ -22,7 +22,7 @@ public class EnemyMove : MonoBehaviour
     }
     void Think()
     {
-        nextMove = Random.Range(-3,3);
+        nextMove = Random.Range(-10,10);
         Invoke("Think", 0.5f);
 
     }
