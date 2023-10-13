@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 public class CharacterController2D : MonoBehaviour
 {
     [SerializeField] private float m_JumpForce = 400f;                        // 플레이어가 점프할 때 추가되는 힘.
-    [Range(0, .3f)][SerializeField] private float m_MovementSmoothing = .05f;  // 움직임을 부드럽게 하는 정도.
+    [Range(0, .3f)][SerializeField] private float m_MovementSmoothing = 0.5f;  // 움직임을 부드럽게 하는 정도.
     [SerializeField] private bool m_AirControl = true;                        // 플레이어가 점프 중에도 조종할 수 있는지 여부.
     [SerializeField] private LayerMask m_WhatIsGround;                        // 캐릭터에게 땅인지 아닌지를 결정하는 마스크.
     [SerializeField] private Transform m_GroundCheck;                         // 플레이어가 땅에 있는지 확인하는 위치.
     [SerializeField] private Transform m_WallCheck;                           // 플레이어가 벽에 닿는지 확인하는 위치
 
-    const float k_GroundedRadius = .2f; // 땅에 닿았는지 확인하기 위한 오버랩 원의 반지름.
+    const float k_GroundedRadius = 2f; // 땅에 닿았는지 확인하기 위한 오버랩 원의 반지름.
     private bool m_Grounded;            // 플레이어가 땅에 있는지 여부.
     private Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // 현재 플레이어가 어느 방향을 보고 있는지 결정.
     private Vector3 velocity = Vector3.zero;
-    private float limitFallSpeed = 25f; // 낙하 속도 제한
+    private float limitFallSpeed = 20f; // 낙하 속도 제한
 
     public bool canDoubleJump = true;  // 플레이어가 두 번 점프할 수 있는지 여부
     [SerializeField] private float m_DashForce = 25f;

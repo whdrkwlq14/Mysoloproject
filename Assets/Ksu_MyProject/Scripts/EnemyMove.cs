@@ -12,7 +12,7 @@ public class EnemyMove : MonoBehaviour
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-        Invoke("Think", 0.5f);
+        Invoke("Think", 0.2f);
     }
     void FixedUpdate()
     {
@@ -23,7 +23,6 @@ public class EnemyMove : MonoBehaviour
     void Think()
     {
         nextMove = Random.Range(-10,10);
-        Invoke("Think", 0.5f);
-
+        Invoke("Think", 0.2f);
     }
 }
