@@ -5,7 +5,7 @@ public class GameManger : MonoBehaviour
 {
     public void StartNewGame()
     {
-        SceneManager.LoadScene("MainScenes");
+        SceneManager.LoadScene("GameScenes");
     }
     public void GameExitBtn()
     {
