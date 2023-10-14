@@ -1,10 +1,15 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameSceneManger : MonoBehaviour
+public class GameManger : MonoBehaviour
 {
     public void StartNewGame()
     {
         SceneManager.LoadScene("MainScenes");
+    }
+    public void GameExitBtn()
+    {
+        Application.Quit();
+        Debug.Log("게임종료");
     }
 }
