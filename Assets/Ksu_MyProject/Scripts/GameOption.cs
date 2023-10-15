@@ -3,44 +3,31 @@ using UnityEngine.SceneManagement;
 
 public class GameOption : MonoBehaviour
 {
-    public GameObject optionPanel; // 옵션 창 UI 패널
+    public GameObject uiPanel; // 옵션 창 UI 패널
+    public GameObject ManualPanel;
 
-    private bool isOptionOpen = false;
+    public bool OptionOpen = false;
 
-        void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isOptionOpen)
-            {
-                CloseOption();
-            }
-            else
-            {
-                OpenOption();
-            }
-        }
-    }
-
-    void OpenOption()
-    {
-        optionPanel.SetActive(true);
-        Time.timeScale = 0f; // 게임 일시 정지
-        isOptionOpen = true;
-    }
 
     void CloseOption()
     {
-        optionPanel.SetActive(false);
+        uiPanel.SetActive(false);
         Time.timeScale = 1f; // 게임 재개
-        isOptionOpen = false;
+        OptionOpen = false;
     }
 
     public void ResumeGame()
     {
         CloseOption();
     }
-    public void GameMeunScenesMove()
+
+    public void ExitManualPanel()
+    {
+
+        ManualPanel.SetActive(false);
+    }
+
+    public void ExitScenesMove()
     {
         SceneManager.LoadScene("GameMenuScenes");
     }
