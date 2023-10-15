@@ -28,9 +28,9 @@ public class UIFadeText : MonoBehaviour
 
     void Update()
     {
-        if (NextScene && Input.anyKeyDown) //입력이 들어오고, 아무 키를 눌렀을때)
+        if (NextScene && Input.anyKeyDown) //입력이 들어오고, 아무 키를 눌렀을때
         {       
-            SceneManager.LoadScene("GameStartScenes"); // 다음 씬을 실행
+            SceneManager.LoadScene("GameMenuScenes"); // 다음 씬을 실행
         }
     }
 

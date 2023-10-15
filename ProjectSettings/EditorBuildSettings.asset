@@ -6,10 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Ksu_MyProject/Scenes/GameLodingScenes.unity
+    path: Assets/Ksu_MyProject/Scenes/GameStartScenes.unity
     guid: 35a072c7159978e409a55f00be8bec5f
   - enabled: 1
-    path: Assets/Ksu_MyProject/Scenes/GameStartScenes.unity
+    path: Assets/Ksu_MyProject/Scenes/GameMenuScenes.unity
     guid: dcbb998e778c4dc48a64123e30d6c9be
   - enabled: 1
     path: Assets/Ksu_MyProject/Scenes/GameScenes.unity
