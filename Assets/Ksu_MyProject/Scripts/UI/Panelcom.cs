@@ -8,8 +8,8 @@ public class Panelcom : MonoBehaviour
     public GameObject uiPanel; // 옵션 창 UI 패널
 
     public GameObject ManualPanel; // 조작법 UI
-    public Button CloseManualPanelButton; // 조작법 닫기 버튼 클릭 변수
 
+    public Button CloseManualPanelButton; // 조작법 닫기 버튼 클릭 변수
     public Button OpenUIPanelSettingButton; // 옵션에서 조작법버튼 열기 클릭버튼
 
     public GameObject TextPanel;
@@ -30,20 +30,6 @@ public class Panelcom : MonoBehaviour
     void Update()
     {
         OpenUIPanelSettingButton.onClick.AddListener(ManualPanelOpen);
-
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    if (isTextPanelActive)
-        //    {
-        //        isTextPanelActive = false;
-        //    }
-        //    else
-        //    {
-        //        isTextPanelActive = true;
-        //    }
-        //    TextPanel.SetActive(isTextPanelActive);
-
-        //}
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {

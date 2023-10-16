@@ -5,6 +5,7 @@ public class GameOption : MonoBehaviour
 {
     public GameObject uiPanel; // 옵션 창 UI 패널
     public GameObject ManualPanel;
+    public GameObject creditsPanel;
 
     public bool OptionOpen = false;
 
@@ -30,5 +31,9 @@ public class GameOption : MonoBehaviour
     public void ExitScenesMove()
     {
         SceneManager.LoadScene("GameMenuScenes");
+    }
+    public void creditsPanelOpen()
+    {
+        creditsPanel.SetActive(true);
     }
 }
