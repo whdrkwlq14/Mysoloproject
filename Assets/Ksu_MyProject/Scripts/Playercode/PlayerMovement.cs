@@ -27,12 +27,6 @@ public class PlayerMovement : MonoBehaviour {
 		{
 			jump = true;
 		}
-
-		//if (Input.GetKeyDown(KeyCode.X))
-		//{
-		//	dash = true;
-		//}
-
 	}
 
 	public void OnFall()
@@ -48,9 +42,9 @@ public class PlayerMovement : MonoBehaviour {
 	void FixedUpdate ()
 	{
 
-		controller.Move(horizontalMove * Time.fixedDeltaTime,jump,dash);
+		controller.Move(horizontalMove * Time.fixedDeltaTime,jump);
 		jump = false;
-		dash = false;
+		//dash = false;
 
     }
 }
