@@ -8814,7 +8814,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Game End\n\n\uAC10\uC0AC\uD569\uB2C8\uB2E4."
+  m_Text: "Game End\n\n\uAC10\uC0AC\uD569\uB2C8\uB2E4.\n\n\uC81C\uC791\uC790: \uAE40\uC11C\uC6B8
+    \n\n"
 --- !u!222 &1434427473
 CanvasRenderer:
   m_ObjectHideFlags: 0
