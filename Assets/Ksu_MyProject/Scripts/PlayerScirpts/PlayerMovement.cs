@@ -5,16 +5,16 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 	public CharacterController2D controller;
-	public Animator animator;
+
+    public Animator animator;
     [SerializeField] Transform _light;
 
-    SpriteRenderer _renderer;
+
 
     public float runSpeed = 40f;
 
 	float horizontalMove = 0f;
 	bool jump = false;
-	bool dash = false;
 	
 	void Update () 
 	{
@@ -39,12 +39,10 @@ public class PlayerMovement : MonoBehaviour {
 		animator.SetBool("IsJumping", false);
 	}
 
-	void FixedUpdate ()
+	void FixedUpdate()
 	{
-
 		controller.Move(horizontalMove * Time.fixedDeltaTime,jump);
 		jump = false;
-		//dash = false;
-
     }
+
 }

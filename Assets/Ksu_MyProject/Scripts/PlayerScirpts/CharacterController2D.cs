@@ -12,48 +12,78 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField] private Transform m_GroundCheck;                         // 플레이어가 땅에 있는지 확인하는 위치.
     [SerializeField] private Transform m_WallCheck;                           // 플레이어가 벽에 닿는지 확인하는 위치
 
+    public float maxHealth = 5;
+    public float currentHealth = 0f; //현재 생명력
+    public SpriteRenderer playerRenderer;
+    public bool isFlashing = false;
+    public float flashDuration = 0.1f;
+    public float flashTimer = 2f;
+
+    public SpikeTrap spikeDamage;
+
     const float k_GroundedRadius = 2f; // 땅에 닿았는지 확인하기 위한 오버랩 원의 반지름.
     private bool m_Grounded;            // 플레이어가 땅에 있는지 여부.
-    private Rigidbody2D m_Rigidbody2D;
+    public Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // 현재 플레이어가 어느 방향을 보고 있는지 결정.
     private Vector3 velocity = Vector3.zero;
     private float limitFallSpeed = 20f; // 낙하 속도 제한
 
-    public bool canDoubleJump = true;  // 플레이어가 두 번 점프할 수 있는지 여부
-    [SerializeField] private float m_DashForce = 25f;
+    [SerializeField] SpriteRenderer _renderer;
 
-    private float prevVelocityX = 0f;
+    public bool canDoubleJump = true;  // 플레이어가 두 번 점프할 수 있는지 여부
+
     private bool canCheck = false;     // 플레이어가 벽에서 미끄러지는지 확인하기 위한 플래그
 
     public float life = 10f;             // 플레이어의 생명력
     public bool invincible = false;     // 플레이어가 무적인지 여부
     private bool canMove = true;         // 플레이어가 움직일 수 있는지 여부
 
-    private Animator animator;
+    public Animator animator;
     public ParticleSystem particleJumpUp;   // 점프 시 생성되는 입자 효과
     public ParticleSystem particleJumpDown;  // 떨어질 때 생성되는 입자 효과
 
     private bool limitVelOnWallJump = false;  // 낮은 FPS에서 벽 점프 거리를 제한하기 위한 플래그
 
-    [Header("이벤트")]
-    [Space]
+    public void Start()
+    {
 
-    public UnityEvent OnFallEvent;
-    public UnityEvent OnLandEvent;
-
-    [System.Serializable]
-    public class BoolEvent : UnityEvent<bool> { }
+        currentHealth = maxHealth; // 시작시 현재 생명력이 최대 일경우 초기화
+        playerRenderer = GetComponent<SpriteRenderer>();
+    }
 
     private void Awake()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        if (OnFallEvent == null)
-            OnFallEvent = new UnityEvent();
+    }
 
-        if (OnLandEvent == null)
-            OnLandEvent = new UnityEvent();
+    public void Update()
+    {
+        if (isFlashing)
+        {
+            flashTimer += Time.deltaTime;
+
+            if (flashTimer >= flashDuration)
+            {
+                isFlashing = false;
+                flashTimer = 0f;
+                playerRenderer.color = new Color(1f, 1f, 1f, 0f);
+            }
+            else
+            {
+                float alphaValue = flashTimer / flashDuration;
+                if (alphaValue % 0.5f < 0.25f)
+                {
+                    playerRenderer.color = new Color(1f, 1f, 1f, 0f);
+                }
+                else
+                {
+                    playerRenderer.color = new Color(1f, 1f, 1f, 1f);
+                }
+            }
+
+        }
     }
 
 
@@ -71,8 +101,6 @@ public class CharacterController2D : MonoBehaviour
                 m_Grounded = true;
             if (!wasGrounded)
             {
-                //OnLandEvent.Invoke();
-                //if (!m_IsWall && !isDashing)
                 particleJumpDown.Play();
                 canDoubleJump = true;
                 if (m_Rigidbody2D.velocity.y < 0f)
@@ -90,16 +118,20 @@ public class CharacterController2D : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-    public void ApplyDamage(float damage, Vector3 position)
+
+    public void ApplyDamage(float damage/* Vector3 position*/)
     {
         if (!invincible)
         {
+            Debug.Log("대미지 확인용");
+            maxHealth -= damage;
+
             animator.SetBool("Hit", true);
-            life -= damage;
-            Vector2 damageDir = Vector3.Normalize(transform.position - position) * 40f;
+            Vector2 damageDir = Vector3.Normalize(transform.position - transform.position) * 100f;
+
             m_Rigidbody2D.velocity = Vector2.zero;
             m_Rigidbody2D.AddForce(damageDir * 10);
-            if (life <= 0)
+            if (currentHealth <= 0)
             {
                 StartCoroutine(WaitToDead());
             }
@@ -191,4 +223,18 @@ public class CharacterController2D : MonoBehaviour
         yield return new WaitForSeconds(1.1f);
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
+
+
+
+
+
+    public void StartFlashingEffect()
+    {
+        isFlashing = true;
+        flashTimer = 0f;
+    }
+
+ 
 }
+
+
