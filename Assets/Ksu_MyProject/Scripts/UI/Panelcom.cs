@@ -11,6 +11,7 @@ public class Panelcom : MonoBehaviour
 
     public Button CloseManualPanelButton; // 조작법 닫기 버튼 클릭 변수
     public Button OpenUIPanelSettingButton; // 옵션에서 조작법버튼 열기 클릭버튼
+    public Button GameEndButton;
 
     public GameObject TextPanel;
 
