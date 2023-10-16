@@ -186,7 +186,6 @@ public class CharacterController2D : MonoBehaviour
         animator.SetBool("IsDead", true);
         canMove = false;
         invincible = true;
-        GetComponent<Attack>().enabled = false;
         yield return new WaitForSeconds(0.4f);
         m_Rigidbody2D.velocity = new Vector2(0, m_Rigidbody2D.velocity.y);
         yield return new WaitForSeconds(1.1f);
