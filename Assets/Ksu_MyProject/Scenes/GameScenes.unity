@@ -3257,6 +3257,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3aa731de8ccd77478f448c739be2fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  E_Panel: {fileID: 1886001618}
+  TextPanel: {fileID: 631349282}
+  uiPanel: {fileID: 1811504616}
 --- !u!1 &927575454
 GameObject:
   m_ObjectHideFlags: 0
@@ -3314,7 +3317,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300150, guid: 7810966f0f690954c87305933cabf2b0, type: 3}
   m_Color: {r: 0.09433961, g: 0.034264855, b: 0.034264855, a: 1}
   m_FlipX: 0
@@ -3334,7 +3337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927575454}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 138.1, y: 0.38, z: 0}
+  m_LocalPosition: {x: 138.29, y: 0.38, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7114,7 +7117,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: 0}
+  m_AnchoredPosition: {x: 35.6, y: 0}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1886001620
@@ -8062,34 +8065,6 @@ PrefabInstance:
     - target: {fileID: 4734382307976618158, guid: 27909f39127f51f45ae85dacf0f6f358, type: 3}
       propertyPath: healthSlider
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Size.x
-      value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Size.y
-      value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 73035f974857c94489896440d1e2b9e8, type: 2}
-    - target: {fileID: 0}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: m_IsTrigger
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4734382307976618158, guid: 27909f39127f51f45ae85dacf0f6f358, type: 3}
