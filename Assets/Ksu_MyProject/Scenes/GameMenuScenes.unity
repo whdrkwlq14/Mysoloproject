@@ -533,15 +533,15 @@ PrefabInstance:
       objectReference: {fileID: 2008175984}
     - target: {fileID: 1040362908468584400, guid: aa85b731f9b25b44b9e56214c4962ce9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1040362908828509958, guid: aa85b731f9b25b44b9e56214c4962ce9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1040362908978371727, guid: aa85b731f9b25b44b9e56214c4962ce9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1040362908992044928, guid: aa85b731f9b25b44b9e56214c4962ce9, type: 3}
       propertyPath: m_Pivot.x
@@ -631,29 +631,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: SettingPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 1040362909247137276, guid: aa85b731f9b25b44b9e56214c4962ce9, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 1040362908992044931, guid: aa85b731f9b25b44b9e56214c4962ce9, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1040362909247137276, guid: aa85b731f9b25b44b9e56214c4962ce9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1040362909247137276, guid: aa85b731f9b25b44b9e56214c4962ce9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1040362909247137276, guid: aa85b731f9b25b44b9e56214c4962ce9, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1040362909426325624, guid: aa85b731f9b25b44b9e56214c4962ce9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1040362909771363583, guid: aa85b731f9b25b44b9e56214c4962ce9, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1040362909771363583, guid: aa85b731f9b25b44b9e56214c4962ce9, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1040362910089587597, guid: aa85b731f9b25b44b9e56214c4962ce9, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -676,6 +680,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2530533038944275532, guid: 35b9c64f2add9c0439f8117a2d8bee7e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e14ca72efcfbfd4e916a419441c579e, type: 3}
     - target: {fileID: 2530533038944275533, guid: 35b9c64f2add9c0439f8117a2d8bee7e, type: 3}
       propertyPath: m_RootOrder
       value: 4
